@@ -49,7 +49,7 @@ const Slideshow = () => {
           src={`/${images[currentImageIndex]}`}
           alt={`Slide ${currentImageIndex + 1}`}
           fill
-          className={`absolute inset-0 w-[95%] h-[95%] m-auto object-contain transition-opacity duration-1000 ${
+          className={`absolute inset-0 max-w-[95%] max-h-[95%] m-auto object-contain transition-opacity duration-1000 ${
             isTransitioning ? "opacity-0" : "opacity-100"
           }`}
         />
