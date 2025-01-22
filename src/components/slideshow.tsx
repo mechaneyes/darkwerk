@@ -61,7 +61,7 @@ const Slideshow = () => {
         >
           ghost@darkwerk.com
         </a>
-        {" "} <span className="text-gray-500">||</span> {"signal: "}
+        {" "} <span className="text-gray-400">||</span> {"signal: "}
         <a
           href="https://signal.me/#u/geist.404"
           className="transition-opacity duration-300 ease-in-out hover:opacity-75"
