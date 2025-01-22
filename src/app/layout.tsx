@@ -13,8 +13,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "darkwerk",
-  description: "Just Us Geists.",
+  title: "darkerk",
+  description: "Ain't Nothin' Goin' on but the Ghosts",
+  openGraph: {
+    title: "darkerk",
+    images: [
+      {
+        url: "https://darkwerk.com/images/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "darkerk",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
