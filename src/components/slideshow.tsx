@@ -43,13 +43,13 @@ const Slideshow = () => {
   }, [images]);
 
   return (
-    <div className="relative w-full h-screen bg-black overflow-hidden">
+    <div className="relative w-full h-[100dvh] overflow-hidden bg-black overflow-hidden">
       {images.length > 0 && (
         <Image
           src={`/${images[currentImageIndex]}`}
           alt={`Slide ${currentImageIndex + 1}`}
           fill
-          className={`absolute inset-0 max-w-[95%] max-h-[95%] m-auto object-contain transition-opacity duration-1000 ${
+          className={`absolute inset-0 max-w-[95%] max-h-[90%] m-auto object-contain transition-opacity duration-1000 ${
             isTransitioning ? "opacity-0" : "opacity-100"
           }`}
         />
