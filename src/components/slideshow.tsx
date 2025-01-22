@@ -54,6 +54,21 @@ const Slideshow = () => {
           }`}
         />
       )}
+      <div className="font-geist-mono text-gray-300 text-center absolute bottom-2 left-3">
+        <a
+          href="mailto:ghost@darkwerk.com"
+          className="transition-opacity duration-300 ease-in-out hover:opacity-75"
+        >
+          ghost@darkwerk.com
+        </a>
+        {" "} <span className="text-gray-500">||</span> {"signal: "}
+        <a
+          href="https://signal.me/#u/geist.404"
+          className="transition-opacity duration-300 ease-in-out hover:opacity-75"
+        >
+          geist.404
+        </a>
+      </div>
     </div>
   );
 };
