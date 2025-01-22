@@ -54,7 +54,7 @@ const Slideshow = () => {
           }`}
         />
       )}
-      <div className="font-geist-mono text-gray-300 text-center absolute bottom-2 left-3">
+      <div className="font-geist-mono text-[0.625rem] text-gray-300 text-center absolute bottom-2 left-3">
         <a
           href="mailto:ghost@darkwerk.com"
           className="transition-opacity duration-300 ease-in-out hover:opacity-75"
