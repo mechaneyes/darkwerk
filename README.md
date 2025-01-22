@@ -1,3 +1,3 @@
 # darkwerk
 
-leveraging the appropriately named, [Geist](https://vercel.com/font), a new font family for Vercel
+leveraging the fittingly named [Geist](https://vercel.com/font) font family for Vercel
