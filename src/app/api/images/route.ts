@@ -12,7 +12,7 @@ export async function GET() {
     );
     
     return NextResponse.json(imageFiles);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to read images directory' }, { status: 500 });
   }
 } 

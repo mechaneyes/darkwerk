@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 const Slideshow = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -44,9 +45,10 @@ const Slideshow = () => {
   return (
     <div className="relative w-full h-screen bg-black overflow-hidden">
       {images.length > 0 && (
-        <img
+        <Image
           src={`/${images[currentImageIndex]}`}
           alt={`Slide ${currentImageIndex + 1}`}
+          fill
           className={`absolute inset-0 w-[97%] h-[93%] m-auto object-contain transition-opacity duration-1000 ${
             isTransitioning ? "opacity-0" : "opacity-100"
           }`}
