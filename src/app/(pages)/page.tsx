@@ -1,7 +1,7 @@
 import ImageSlideshow from "@/components/slideshow";
 
 function App() {
-  return (<ImageSlideshow />);
+  return <ImageSlideshow />;
 }
 
 export default App;
