@@ -15,8 +15,25 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "darkerk",
   description: "Ain't Nothin' Goin' on but the Ghosts",
+  icons: {
+    icon: [
+      {
+        url: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👻</text></svg>",
+        type: "image/svg+xml",
+      }
+    ],
+    apple: [
+      {
+        url: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👻</text></svg>",
+        type: "image/svg+xml",
+      }
+    ],
+  },
   openGraph: {
     title: "darkwerk",
+    description: "Ain't Nothin' Goin' on but the Ghosts",
+    url: "https://darkwerk.com",
+    siteName: "darkwerk",
     images: [
       {
         url: "https://darkwerk.com/images/og.jpg",
