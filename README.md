@@ -1,3 +1,10 @@
 # darkwerk
 
-leveraging the fittingly named [Geist](https://vercel.com/font) font family for Vercel
+### https://darkwerk.com
+
+Ain't Nothin' Goin' on but the Ghosts
+
+<br>
+
+![darkwerk](./public/images/og.jpg)
+

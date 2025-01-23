@@ -1,11 +1,7 @@
 import ImageSlideshow from "@/components/slideshow";
 
 function App() {
-  return (
-    <div className="App">
-      <ImageSlideshow />
-    </div>
-  );
+  return <ImageSlideshow />;
 }
 
 export default App;
