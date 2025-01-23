@@ -7,6 +7,7 @@ const Slideshow = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [images, setImages] = useState([]);
+  const [isNextImageLoaded, setIsNextImageLoaded] = useState(true);
 
   // Load from directory
   useEffect(() => {
@@ -22,16 +23,32 @@ const Slideshow = () => {
     loadImages();
   }, []);
 
+  // Helper function to preload an image
+  const preloadImage = (src: string): Promise<void> => {
+    return new Promise<void>((resolve) => {
+      const img = new window.Image();
+      img.onload = () => resolve();
+      img.src = src;
+    });
+  };
+
   useEffect(() => {
     if (images.length === 0) return;
 
-    const transitionTimer = setInterval(() => {
+    const transitionTimer = setInterval(async () => {
+      // Calculate next image index
+      const nextIndex = currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1;
+      
+      // Preload next image
+      setIsNextImageLoaded(false);
+      await preloadImage(`/${images[nextIndex]}`);
+      setIsNextImageLoaded(true);
+
+      // Start transition only after image is loaded
       setIsTransitioning(true);
 
       setTimeout(() => {
-        setCurrentImageIndex((prevIndex) =>
-          prevIndex === images.length - 1 ? 0 : prevIndex + 1
-        );
+        setCurrentImageIndex(nextIndex);
 
         setTimeout(() => {
           setIsTransitioning(false);
@@ -40,7 +57,7 @@ const Slideshow = () => {
     }, 8000);
 
     return () => clearInterval(transitionTimer);
-  }, [images]);
+  }, [images, currentImageIndex]);
 
   return (
     <div className="relative w-full h-[100dvh] overflow-hidden bg-black overflow-hidden">
@@ -50,8 +67,9 @@ const Slideshow = () => {
           alt={`Slide ${currentImageIndex + 1}`}
           fill
           className={`absolute inset-0 max-w-[95%] max-h-[90%] m-auto object-contain transition-opacity duration-1000 ${
-            isTransitioning ? "opacity-0" : "opacity-100"
+            isTransitioning || !isNextImageLoaded ? "opacity-0" : "opacity-100"
           }`}
+          priority
         />
       )}
       <div className="font-geist-mono text-xs text-gray-300 text-center absolute bottom-2 left-3">
