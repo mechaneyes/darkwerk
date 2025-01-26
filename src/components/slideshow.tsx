@@ -37,8 +37,9 @@ const Slideshow = () => {
 
     const transitionTimer = setInterval(async () => {
       // Calculate next image index
-      const nextIndex = currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1;
-      
+      const nextIndex =
+        currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1;
+
       // Preload next image
       setIsNextImageLoaded(false);
       await preloadImage(`/${images[nextIndex]}`);
@@ -72,19 +73,27 @@ const Slideshow = () => {
           priority
         />
       )}
-      <div className="font-geist-mono text-xs text-gray-300 text-center absolute bottom-2 left-3">
+      <div className="absolute flex justify-between items-center w-full absolute bottom-2 px-3 font-geist-mono text-xs text-gray-300 text-center">
+        <div className="">
+          <a
+            href="mailto:ghost@darkwerk.com"
+            className="transition-opacity duration-300 ease-in-out hover:opacity-75"
+          >
+            ghost@darkwerk.com
+          </a>{" "}
+          <span className="text-gray-400">||</span> {"signal: "}
+          <a
+            href="https://signal.me/#u/geist.404"
+            className="transition-opacity duration-300 ease-in-out hover:opacity-75"
+          >
+            geist.404
+          </a>
+        </div>
         <a
-          href="mailto:ghost@darkwerk.com"
+          href="https://nysee.nyc"
           className="transition-opacity duration-300 ease-in-out hover:opacity-75"
         >
-          ghost@darkwerk.com
-        </a>
-        {" "} <span className="text-gray-400">||</span> {"signal: "}
-        <a
-          href="https://signal.me/#u/geist.404"
-          className="transition-opacity duration-300 ease-in-out hover:opacity-75"
-        >
-          geist.404
+          nysee.nyc
         </a>
       </div>
     </div>
