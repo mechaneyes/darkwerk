@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "darkerk",
+  title: "darkwerk",
   description: "Ain't Nothin' Goin' on but the Ghosts",
   icons: {
     icon: [
